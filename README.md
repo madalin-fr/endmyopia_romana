@@ -1,3 +1,2 @@
-echo # endmyopia_romana
-# endmyopia_romana
-# endmyopia_romana
+## Endmyopia în formă rudimentară în lb. romănă
+https://ursawarlord.github.io/endmyopia_romana/
