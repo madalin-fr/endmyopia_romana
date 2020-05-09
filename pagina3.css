@@ -12,3 +12,18 @@ figure
 {
     margin-bottom:20vh;
 }
+
+#div_score
+{
+    display:inline-block;
+    position:sticky;
+    overflow:hidden;
+    font-size:1em;
+    background-color:rgb(200,200,200);
+    height:auto;
+    padding-bottom:2vh;
+    float:right;
+    width:38%;
+    transform: translateY(100%);
+    text-align:center;
+}

@@ -1,0 +1,34 @@
+fieldset button
+{
+    float:right;
+    position: relative;
+    cursor:pointer;
+}
+
+
+.red
+{
+    background-color:red;
+}
+.yellow
+{
+    background-color:yellow;
+}
+.greenyellow
+{
+    background-color: greenyellow;
+}
+fieldset
+{
+    cursor:help;
+}
+
+textarea{
+    resize:none;
+}
+
+#submit
+{
+    margin:auto;
+    display:block;
+}
