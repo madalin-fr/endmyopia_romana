@@ -188,7 +188,6 @@ section
 footer
 {
     text-align:center;
-    border:1px solid blue;
 }
 
 @media only screen and (min-width : 900px ) and (min-height:600px){       /* mobile first, desktop elements last */

@@ -6,31 +6,63 @@ var current_intrebare;
 var myFieldSets = document.querySelectorAll("fieldset");
 var Timp = {zile: new Date().getDay(), ore : new Date().getHours(), minute : new Date().getMinutes(), secunde : new Date().getSeconds()};
 var start;
-// function Timp()
-// {
-//     this.minute = new Date().getMinutes();
-//     this.secunde = new Date().getSeconds();
-//     this.scade = function(interval2)
-//     {
-//         if(this.secunde < interval2.secunde)
-//         {
-//             this.minute -= 1;
-//             this.secunde += 60;
-//             this.secunde -= interval2.secunde;
-//         }
-//         else
-//             this.secunde -= interval2.secunde;
-//         if(this.minute < interval2.minute)
-//             this.minute = interval2.minute - this.minute;
-//         else
-//             this.minute -= interval2.minute;
-//     };
-// }
+var nrAccesari;
+window.onload = function()
+{
+    
+    if((start !== undefined && start.zile - Date().getDay) >= 1)
+    {
+        alert("A trecut mai mult de o zi de la salvarea formularului curent. Vom reseta totul, din pacate!");
+        localStorage.clear();
+    }
+    if(localStorage.length == 0)
+    {
+        Reset();
+        first_time_visit = true;
+        alert("OK");
+    }
+    else
+    {
+        first_time_visit = false;
+        Load();
+    }
+    this.document.getElementById("dropdown").addEventListener("click", function(e){e.preventDefault();alert("Nu ai voie sa schimbi subiectul!")});
+    document.getElementById("submit").style.display = "none";
+    this.document.getElementById("submit").addEventListener("click",submit);
+    document.getElementById("reset").onclick=Reset;
+    for(var i=0;i<this.myFieldSets.length;i++)
+    {
+        this.myFieldSets[i].addEventListener('auxclick', helper, false);
+        this.myFieldSets[i].addEventListener('click', helper, false);
+    }
+    for(var i=0;i<this.myFieldSets.length;i++)
+    {
+        var myInputs = this.myFieldSets[i].getElementsByTagName("input");
+        var myLabels = this.myFieldSets[i].getElementsByTagName("label");
+        var myTextInputs = this.myFieldSets[i].getElementsByTagName("textarea");
+        for(var j=0;j<myInputs.length;j++)
+        {
+            myInputs[j].addEventListener("click",stop_propagate,true);
+            myLabels[j].addEventListener("click",stop_propagate,true);
+        }
+        for(var j=0;j<myTextInputs.length;j++)
+            myTextInputs[j].addEventListener("click",stop_propagate,true);
+    }
+    current_intrebare = this.parseInt(localStorage.getItem("s_current"));
+    for(var i=0;i<=this.current_intrebare;i++)
+    {
+        this.myFieldSets[i].style.display = "block";
+    }
+    for(var i=0;i<this.myFieldSets.length;i++)
+    {
+        var btn = this.myFieldSets[i].children.namedItem("b_inainte");
+        btn.classList.add(this.get_rand_color());
+        btn.addEventListener("click", next_intrebare, true);
+    }
+    if(!first_time_visit)
+        setTimeout(function(){alert(`Bine ati revenit! \nAti accesat de ${nrAccesari} ori acest formular.`);}, 600);
+}
 
-
-
-var interval = {
-            };
 
 function stop_propagate(event)
 {
@@ -44,7 +76,7 @@ function flatten_inherited_obj(obj)
     return obj;
 }
 
-var nrAccesari;
+
 function Init()
 {    
     let startTime = Object.create(Timp);
@@ -66,13 +98,18 @@ function Init()
 
 function Load()
 {
+    if(first_time_visit)
+        return;
     intrebare1 = JSON.parse(localStorage.getItem("s_intrebare1"));
     intrebare2 = JSON.parse(localStorage.getItem("s_intrebare2"));
     intrebare3 = JSON.parse(localStorage.getItem("s_intrebare3"));
     start = JSON.parse(localStorage.getItem("startTime"));
     nrAccesari = parseInt(localStorage.getItem("s_nraccesari"));
     document.getElementById("submit").style.display = localStorage.getItem("s_submit");
-    var intrebari = [intrebare1,intrebare2,intrebare3];
+    let intrebari = [];
+    intrebari.push(intrebare1);
+    intrebari.push(intrebare2);
+    intrebari.push(intrebare3);
     for(var i=0;i<intrebari.length;i++)
     {
         var myInputs = document.getElementsByName("intrebare"+(i+1));
@@ -129,58 +166,6 @@ function Reset()
     Init();
     Load();
 }
-window.onload = function()
-{
-    this.Load();
-    if((this.start.zile - this.Date().getDay) >= 1)
-        {
-            alert("A trecut mai mult de o zi de la salvarea formularului curent. Vom reseta totul, din pacate!");
-            localStorage.clear();
-        }
-    if(localStorage.length == 0)
-        {
-            this.Reset();
-            first_time_visit = true;
-        }
-    else
-        first_time_visit = false;
-
-    this.document.getElementById("dropdown").addEventListener("click", function(e){e.preventDefault();alert("Nu ai voie sa schimbi subiectul!")});
-    document.getElementById("submit").style.display = "none";
-    this.document.getElementById("submit").addEventListener("click",submit);
-    document.getElementById("reset").onclick=Reset;
-    for(var i=0;i<this.myFieldSets.length;i++)
-    {
-        this.myFieldSets[i].addEventListener('auxclick', helper, false);
-        this.myFieldSets[i].addEventListener('click', helper, false);
-    }
-    for(var i=0;i<this.myFieldSets.length;i++)
-    {
-        var myInputs = this.myFieldSets[i].getElementsByTagName("input");
-        var myLabels = this.myFieldSets[i].getElementsByTagName("label");
-        var myTextInputs = this.myFieldSets[i].getElementsByTagName("textarea");
-        for(var j=0;j<myInputs.length;j++)
-        {
-            myInputs[j].addEventListener("click",stop_propagate,true);
-            myLabels[j].addEventListener("click",stop_propagate,true);
-        }
-        for(var j=0;j<myTextInputs.length;j++)
-            myTextInputs[j].addEventListener("click",stop_propagate,true);
-    }
-    current_intrebare = this.parseInt(localStorage.getItem("s_current"));
-    for(var i=0;i<=this.current_intrebare;i++)
-    {
-        this.myFieldSets[i].style.display = "block";
-    }
-    for(var i=0;i<this.myFieldSets.length;i++)
-    {
-        var btn = this.myFieldSets[i].children.namedItem("b_inainte");
-        btn.classList.add(this.get_rand_color());
-        btn.addEventListener("click", next_intrebare, true);
-    }
-    if(!first_time_visit)
-        setTimeout(function(){alert(`Bine ati revenit! \nAti accesat de ${nrAccesari} ori acest formular.`);}, 600);
-}
 
 function next_intrebare(event)
 {
@@ -223,7 +208,7 @@ function next_intrebare(event)
         }
         if(!rez)
             alert("Nu ai completat nimic!");
-        if(rez.toString().toLowerCase().includes("cyl") || rez.toString().toLowerCase().includes("sph"))
+        else if(rez.toString().toLowerCase().includes("cyl") || rez.toString().toLowerCase().includes("sph"))
         {
             alert("Ai introdus o prescriere corecta! Urmeaza sa iti oferim sfaturi personalizate.");
             myFieldSets[current_intrebare].disabled = true;
@@ -305,7 +290,7 @@ function get_rand_color()
 
 window.onbeforeunload = function (e) {
     window.onunload = function () {
-            this.Save();
+            Save();
     }
     return undefined;
 };
