@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="theme.css">
+    <link rel="stylesheet" type="text/css" href="pagina2.css">
+    <meta charset="UTF-8">
+    <meta name="description" content="Educatie despre miopie. Cauze, prevenire si tratare intr-un mod sanatos.">
+    <meta name="keywords" content="oftalmologie, miopie, ochi, defect, refractie, vedere, claritate, focalizare">
+    <meta name="author" content="Madalin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="theme.js"></script>
+</head>
+
+<body>
+
+
+     <header>
+        <img src="logo.png" id="logo">
+        <div id="titlu">
+        <h1> Educatie despre miopie </h1>
+        <h3> Un ghid de ajutor la nevoie! </h3>
+        </div>
+        <nav id="meniu">
+        <span>Meniu</span>
+        <div id="dropdown">
+            <ul>
+            <li><a href="pagina2.html"> Istorie în optică</a></li>
+            <li class="meniu_selected"><a href="#"> Matematică în optică</a></li>
+            <li><a href="pagina3.html"> Biologie în optică</a></li>
+            <li><a href="pagina4.html"> Formular pentru interogare</a></li>
+            </ul>
+        </div>
+        </div>
+      </nav>
+      <form style="float:right"action="/logout?_method=DELETE"  method="POST">
+        <button type="submit">Logout</button>
+    </form>
+  </header>
+
+
+
+    <aside>
+        <h1> Sursa informatii</h1>
+        <code> endmyopia.org</code>
+    </aside>
+
+    <section>
+        <article>
+           <ol>
+            <li>Diopterele sunt contoare inverse (amintiți-vă 100cm = 1m)
+                <code>D = 1 / Metri;  Invers metre = 1 / D </code>
+            </li>
+            <li>Punctul de refracție și * ghid pentru rezistența diferențială * (depinde în continuare de distanță / unele persoane fac excepții)
+                <code>https://youtu.be/9z2jjT_Gm7o <br>
+                    s = distanța față de obiect (pentru distanță doar pusă în număr mare) (metri)  <br>
+                    s '= distanța până la punctul de refracție (pentru miopi cât de departe se poate vedea clar) (metri) (introdus ca negativ) <br>
+                    f = distanța focală a obiectivului (metri) <br>
+                    P = puterea obiectivului (dioptrii) <br>
+                    1 / f = (1 / s) + (1 / s ') <br>
+                    1 / f = P  </code>
+            </li>
+            <li> Ecuația vizuală a acuității (unități consistente)
+                <code>(Înălțimea fontului / distanța de semnat) (180 / 60pi) = arcminute = a <br>
+                    Notă: 5Arcminute = 20/20 <br>
+                    Setați proporția a / (20 / x) = 5 / (20/20) </code>
+            </li>
+            <li>Acuitatea vizuală (mm / metri)
+                <code>(Înălțimea fontului {mm} / distanța de semnare {m}) * 13.75 = numitorul x de 20 / x  </code>
+            </li>
+            <li>Acuitatea vizuală (în / picioare)
+                <code>(Înălțimea fontului {în} / distanța de semnat {ft.}) * 1146 = numitor x de 20 / x  </code>
+            </li>
+           </ol>
+        </article>
+       
+    </section>
+    
+     <footer>
+        <p>&copy 2020 - universitatea din bucuresti</p>
+        <p id="vizite" style="color:red"></p>
+        <p id="nrcuvinte" style="color:cyan"></p>
+    </footer>
+	
+</body>
+
+</html>

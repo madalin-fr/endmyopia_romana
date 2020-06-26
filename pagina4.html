@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="theme.css">
+  <link rel="stylesheet" type="text/css" href="pagina4.css">
+  <meta charset="UTF-8">
+  <meta name="description" content="Educatie despre miopie. Cauze, prevenire si tratare intr-un mod sanatos.">
+  <meta name="keywords" content="oftalmologie, miopie, ochi, defect, refractie, vedere, claritate, focalizare">
+  <meta name="author" content="Madalin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="theme.js"></script>
+</head>
+
+<body>
+
+
+     <header>
+        <img src="logo.png" id="logo">
+        <div id="titlu">
+        <h1> Educatie despre miopie </h1>
+        <h3> Un ghid de ajutor la nevoie! </h3>
+        </div>
+        <nav id="meniu">
+        <span>Meniu</span>
+        <div id="dropdown">
+            <ul>
+            <li ><a href="pagina1.html"> Istorie în optică</a></li>
+            <li><a href="pagina2.html"> Matematică în optică</a></li>
+            <li><a href="pagina3.html"> Biologie în optică</a></li>
+            <li class="meniu_selected"><a href="#"> Formular pentru interogare</a></li>
+            </ul>
+        </div>
+      </nav>
+      <form style="float:right"action="/logout?_method=DELETE"  method="POST">
+        <button type="submit">Logout</button>
+    </form>
+  </header>
+
+
+
+  <aside>
+    <h1> Sursa informatii</h1>
+    <code> endmyopia.org</code> <br><br><br>
+    <button id="reset">Reset formular</button>
+  </aside>
+
+
+  <section>
+
+    <form method="post" action="mailto:cineva@gmail.com" enctype="text/plain" >
+      <fieldset class="myFieldSets">
+        <legend>Cât timp ai purtat ochelari?</legend>
+        <input type="radio" id="q1" name="intrebare1" value="A">
+        <label for="q1"> Nu port ochelari.</label> <br>
+        <input type="radio" id="q2" name="intrebare1" value="B">
+        <label for="q2"> Mai putin de un an. </label> <br>
+        <input type="radio" id="q3" name="intrebare1" value="C">
+        <label for="q3">1-5 ani. </label> <br>
+        <input type="radio" id="q4" name="intrebare1" value="D">
+        <label for="q4">5-10 ani. </label> <br>
+        <input type="radio" id="q5" name="intrebare1" value="E">
+        <label for="q5">10-20 de ani. </label> <br>
+        <input type="radio" id="q6" name="intrebare1" value="F">
+        <label for="q6">Încă din zorii timpului, fiule.</label>
+        <button id="b_inainte" type="button">Inainte!</button>
+      </fieldset>
+      <fieldset class="myFieldSets">
+        <legend>Cât de mare este miopia ta?</legend>
+        <textarea  rows="5" name="intrebare2" placeholder="Scrie aici prescrierea ta de la oftalmolog"></textarea>
+        <button id="b_inainte" type="button">Inainte!</button>
+      </fieldset>
+      <fieldset class="myFieldSets">
+        <legend>Avem o serie de noi rutine pentru tine. Te rugam sa le alegi pe cele care iti convin in acest moment!</legend>
+        <input type="checkbox" id="q1" name="intrebare3" value="A">
+        <label for="q1"> reduceți perechea completă la o normalizare.</label> <br>
+        <input type="checkbox" id="q2" name="intrebare3" value="B">
+        <label for="q2"> Faza în perechea de compromis normă / dif (ochelari de calculator). </label> <br>
+        <input type="checkbox" id="q3" name="intrebare3" value="C">
+        <label for="q3">elimina supracorectia. </label> <br>
+        <input type="checkbox" id="q4" name="intrebare3" value="D">
+        <label for="q4">Dacă se întâmplă, asigurați-vă că vă întoarceți cât puteți, imediat ce observați. </label> <br>
+        <input type="checkbox" id="q5" name="intrebare3" value="E">
+        <label for="q5">Ergonomia minții. </label> <br>
+        <input type="checkbox" id="q6" name="intrebare3" value="F">
+        <label for="q6">Realizează că pericolul înseamnă blocare musculară ciliară. </label>
+        <button id="b_inainte" type="button">Inainte!</button>
+      </fieldset>
+      <button type="submit" id="submit"> Submit </button> 
+    </form>
+     <footer>
+        <p>&copy 2020 - universitatea din bucuresti</p>
+        <p id="vizite" style="color:red"></p>
+        <p id="nrcuvinte" style="color:cyan"></p>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="pagina4.js"></script> 
+  
+
+
+</body>
+
+</html>

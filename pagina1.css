@@ -1,0 +1,41 @@
+.grid-container
+{
+display:grid;
+width:100%;
+background-color:red; 
+grid-template-columns:1fr 6fr;
+grid-gap:0px;
+}
+
+.grid-item
+{
+ border: 1px solid rgba(0, 0, 0, 0.8);
+ padding: 20px;
+ font-size: 1em;
+ text-align: center;
+}
+
+.grid-item:nth-of-type(odd)
+{
+    background-color:green;
+    color:red;
+    text-decoration:underline;
+}
+.grid-item:nth-of-type(even)
+{
+    background-color:lightblue;
+}
+.grid-item:nth-of-type(4n)
+{
+    background-color:orange;
+}
+
+.grid-item:nth-of-type(4n+1)
+{
+    background-color:greenyellow;
+}
+.grid-item:last-of-type
+{
+    background:white;
+}
+
